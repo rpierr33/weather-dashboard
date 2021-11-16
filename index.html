@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" defer></script>
+    <title>My Weather Dashboard </title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <header>
+            <h1>My Weather Dashboard</h1>
+        </header>
+
+        <div class="row">
+            <div class="sidebar col-md-4">
+                <div class="mt-2" id="data-container">
+                    <label id="searchName" for="cityRequest">Search for a City:</label>
+                    <input type="text" placeholder="Oakland Park" id="cityRequest" name="cityRequest"><br>
+                    <button id="searchBtn">Search</button>
+                </div>
+
+                <div class="lineSpacing"></div>
+                <div class="list-group"></div>
+
+                <div id="searchedCities"></div>
+            </div>
+
+            <div class="data-result-container col-md-8">
+                <div class="row p-2">
+                    <div class="data-result-card">
+                        <div class="data-result-card-body">
+                            <div class="city-date-result">{CITY HERE} {MM/DD/YYYY}</div>
+                            <br>
+                            <span class="temperature">{X}°F</span>
+                            <br>
+                            <span class="wind">{WIND VALUE} MPH</span>
+                            <br>
+                            <span class="humidity">{HUMIDITY VALUE} %</span>
+                            <br>
+                            <span class="uvIndex">{UV INDEX VALUE}</span>
+                        </div>
+
+                    </div>
+
+                    <div class="reg-forecast row">
+                        <h4>Five Day Forecast</h4>
+                    </div>
+                </div>
+                <div class="expected-forecast row"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
