@@ -1,68 +1,68 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/style.css">
-   <title>My Weather Dashboard </title>
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>My Weather Dashboard</title>
 </head>
 
 <body>
-
     <div class="container-fluid">
-
         <header>
             <h1>My Weather Dashboard</h1>
         </header>
 
+
         <div class="row">
             <div class="sidebar col-md-4">
+                <!-- Search for a City sidebar -->
                 <div class="mt-2" id="data-container">
                     <label id="searchName" for="cityRequest">Search for a City:</label>
-                    <input type="text" placeholder="Oakland Park" id="cityRequest" name="cityRequest"><br>
+                    <input type="text" placeholder="Oakland park" id="cityRequest" name="cityRequest"><br>
                     <button id="searchBtn">Search</button>
                 </div>
-
                 <div class="lineSpacing"></div>
                 <div class="list-group"></div>
-
+                <!-- Add preset city names -->
                 <div id="searchedCities"></div>
             </div>
 
+
+            <!-- City temp, wind, humidity, and UV index -->
             <div class="data-result-container col-md-8">
                 <div class="row p-2">
                     <div class="data-result-card">
                         <div class="data-result-card-body">
-                            <div class="city-date-result">{CITY HERE} {MM/DD/YYYY}</div>
+                            <div class="city-date-result data">{CITY HERE} {MM/DD/YYYY}</div>
                             <br>
-                            <span class="temperature">{X}°F</span>
+                            <span class="temperature data">{X}°F</span>
                             <br>
-                            <span class="wind">{WIND VALUE} MPH</span>
+                            <span class="wind data">{WIND VALUE} MPH</span>
                             <br>
-                            <span class="humidity">{HUMIDITY VALUE} %</span>
+                            <span class="humidity data">{HUMIDITY VALUE} %</span>
                             <br>
-                            <span class="uvIndex">{UV INDEX VALUE}</span>
+                            <span class="uvIndex data">{UV INDEX VALUE}</span>
                         </div>
-
                     </div>
-
+                    <!-- 5-Day Forecast -->
                     <div class="reg-forecast row">
-                        <h4>Five Day Forecast</h4>
+                        <h4>Five Day Forecast:</h2>
                     </div>
                 </div>
                 <div class="expectedForecast row"></div>
-
             </div>
-        </div>
 
+        </div>
     </div>
 
-    <script src="./assets/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    
-
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
