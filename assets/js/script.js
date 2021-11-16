@@ -25,18 +25,27 @@ const getWeatherApi = function (cityNameData) {
     })
     .catch(err => console.log(err));
 };
-
 function addWeatherEventListener() {
-    const presetCityButns = document.querySelectorAll(".cityNameData");
-    presetCityButns.forEach(function (btn) {
+    const presetCityBtns = document.querySelectorAll(".cityNameData");
+    presetCityBtns.forEach(function (btn) {
         btn.addEventListener("click", function (e) {
             cityNameData = e.target.innerText;
             fetchWeather(cityNameData);
+   
+        });
+    });
+}
+            const searchButton = document.getElementById("searchBtn");
+            searchButton.addEventListener("click", function () {
+                cityNameData = $("#cityInput").val();
+                fetchWeather(cityNameData);
+                console.log(storedCity);
+                storedCity.push(cityNameData);
 
             const addNewBtn = document.createElement("button");
             addNewBtn.setAttribute("class", "cityNameData");
             addNewBtn.textContent = cityNameData;
-            $("#presetCities").append(addNewBtn);
+            $("#searchedCities").append(addNewBtn);
         
             localStorage.setItem("City", JSON.stringify(storedCity));
             addWeatherEventListener();
@@ -44,5 +53,4 @@ function addWeatherEventListener() {
 
 
         });
-    });
-}
+  
