@@ -1,11 +1,11 @@
-let cityName;
+let cityNameData;
 let storedCityResult = JSON.parse(localStorage.getItem("City")) || [];
 
 for (let i = 0; i < storedCityResult.length; i++) {
     var addSearchedCityButtons = document.createElement("button");
     addSearchedCityButtons.setAttribute("class", "cityNames");
     addSearchedCityButtons.textContent = storedCityResult[i];
-    console.log(storedCity[i]);
+    console.log(storedCityResult[i]);
     $("#searchedCities").append(addSearchedCityButtons);
     addWeatherEventListener();
 }
@@ -31,7 +31,7 @@ function addWeatherEventListener() {
     presetCityBtns.forEach(function (btn) {
         btn.addEventListener("click", function (e) {
             cityNameData = e.target.innerText;
-            fetchWeather(cityNameData);
+            getWeatherApi(cityNameData);
    
         });
     });
@@ -39,16 +39,16 @@ function addWeatherEventListener() {
             const searchButton = document.getElementById("searchBtn");
             searchButton.addEventListener("click", function () {
                 cityNameData = $("#cityInput").val();
-                fetchWeather(cityNameData);
-                console.log(storedCity);
-                storedCity.push(cityNameData);
+                getWeatherApi(cityNameData);
+                console.log(storedCityResult);
+                storedCityResult.push(cityNameData);
 
             const addNewBtn = document.createElement("button");
             addNewBtn.setAttribute("class", "cityNameData");
             addNewBtn.textContent = cityNameData;
             $("#searchedCities").append(addNewBtn);
         
-            localStorage.setItem("City", JSON.stringify(storedCity));
+            localStorage.setItem("City", JSON.stringify(storedCityResult));
             addWeatherEventListener();
             
 
