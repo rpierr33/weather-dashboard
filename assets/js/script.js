@@ -54,3 +54,30 @@ function addWeatherEventListener() {
 
         });
   
+
+        const getDateTime = function (time) {
+            const randomDate = new Date();
+            randomDate.setTime(time * 1000);
+            let dd = randomDate.getDate();
+            let mm = randomDate.getMonth() + 1;
+            let y = randomDate.getFullYear();
+            return mm + '/' + dd + '/' + y;
+
+        }
+
+
+        const getWeatherApi = function (cityNameData) {
+            let openWeatherAPI = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityNameData + "&appid=2526c93b28a34d747fa977b104c5695a";
+            fetch(openWeatherAPI)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                if (data.cod !== "200") {
+                    console.log("City not found, Try again");
+                    return;
+                }
+        
+            })
+            .catch(err => console.log(err));
+        };
