@@ -54,3 +54,13 @@ function addWeatherEventListener() {
 
         });
   
+
+        const toDatetime = function (time) {
+            const randomDate = new Date();
+            randomDate.setTime(time * 1000);
+            let dd = randomDate.getDate();
+            let mm = randomDate.getMonth() + 1;
+            let y = randomDate.getFullYear();
+            return mm + '/' + dd + '/' + y;
+
+        }
