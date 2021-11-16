@@ -21,4 +21,7 @@ const getWeatherApi = function (cityNameData) {
             console.log("City not found, Try again");
             return;
         }
+
     })
+    .catch(err => console.log(err));
+};
