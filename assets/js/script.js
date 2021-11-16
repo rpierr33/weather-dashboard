@@ -25,3 +25,24 @@ const getWeatherApi = function (cityNameData) {
     })
     .catch(err => console.log(err));
 };
+
+function addWeatherEventListener() {
+    const presetCityButns = document.querySelectorAll(".cityNameData");
+    presetCityButns.forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+            cityNameData = e.target.innerText;
+            fetchWeather(cityNameData);
+
+            const addNewBtn = document.createElement("button");
+            addNewBtn.setAttribute("class", "cityNameData");
+            addNewBtn.textContent = cityNameData;
+            $("#presetCities").append(addNewBtn);
+        
+            localStorage.setItem("City", JSON.stringify(storedCity));
+            addWeatherEventListener();
+            
+
+
+        });
+    });
+}
