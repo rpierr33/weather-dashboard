@@ -1,7 +1,7 @@
 header {
     display: flex;
     justify-content: center;
-    background: linear-gradient(#4169e1, #8641E1);
+    background: linear-gradient(blue, green);
     padding: 15px;
 }
 
@@ -14,7 +14,7 @@ header {
 
 #searchBtn {
     width: 300px;
-    background-color: royalblue;
+    background-color: rgb(61, 160, 106);
     color: white;
     margin-top: 15px;
     border-radius: 5px;
@@ -28,7 +28,7 @@ header {
 }
 
 .lineSpacing {
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid black;
     margin-top: 15px;
     margin-bottom: 15px;
     width: 300px;
@@ -38,7 +38,7 @@ header {
     width: 300px;
     margin-bottom: 15px;
     padding: 10px;
-    background-color: lightblue;
+    background-color: rgb(61, 160, 106);
     border-radius: 10px;
 }
 
@@ -53,7 +53,7 @@ header {
 
 .data {
     margin-top: 7px;
-    display: block;
+   
 }
 
 .city-date-result {
@@ -66,7 +66,7 @@ header {
 }
 
 .day {
-    background-color: rgb(54, 54, 92);
+    background-color: rgb(65, 92, 54);
     color: white;
     padding: 15px;
     margin-right: 20px;

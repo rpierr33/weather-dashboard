@@ -41,17 +41,21 @@ presetCityButns.forEach(function (btn) {
 let searchBtn = document.getElementById("searchBtn");
 searchBtn.addEventListener("click", function () {
 cityNameData = $("#cityRequest").val();
-fetchWeather(cityNameData);
-console.log(storedCity);
-storedCity.push(cityNameData);
+if ($("#cityRequest").val().length > 0) {
+    fetchWeather(cityNameData);
+    console.log(storedCity);
+    storedCity.push(cityNameData);
 
-let addNewBtn = document.createElement("button");
-addNewBtn.setAttribute("class", "cityNameData");
-addNewBtn.textContent = cityNameData;
-$("#searchedCities").append(addNewBtn);
+    let addNewBtn = document.createElement("button");
+    addNewBtn.setAttribute("class", "cityNameData");
+    addNewBtn.textContent = cityNameData;
+    $("#searchedCities").append(addNewBtn);
 
-localStorage.setItem("City", JSON.stringify(storedCity));
-addWeatherEventListener();
+    localStorage.setItem("City", JSON.stringify(storedCity));
+    addWeatherEventListener();
+    }
+    else {alert("Please Enter City Name")};
+
 });
 
 // Create a function to get the date
@@ -66,7 +70,7 @@ return mm + '/' + dd + '/' + y;
 
 // Create a container that contains the city, date, temp, wind, humidity and UV index
 let getCityInfo = function (lat, lon) {
-let uvApi = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&appid=2526c93b28a34d747fa977b104c5695a' + '&units=metric';
+let uvApi = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&appid=2526c93b28a34d747fa977b104c5695a' + '&units=imperial';
 fetch(uvApi)
 .then(function (response) {
     return response.json();
@@ -98,7 +102,7 @@ for (let i = 1; i < 6; i++) {
 let day = $("<div class='day'><div />")
 $(day).append(getDateTime(data.daily[i].dt));
 $(day).append(`<img src="https://openweathermap.org/img/w/${data.daily[i].weather[0].icon}.png"/>`);
-$(day).append("<p>Temp: " + data.daily[i].temp.day + " °C</p>");
+$(day).append("<p>Temp: " + data.daily[i].temp.day + " °F</p>");
 $(day).append("<p>Wind: " + data.daily[i].wind_speed + " MPH</p>");
 $(day).append("<p>Humidity: " + data.daily[i].humidity + " %</p>");
 $('.expectedForecast').append(day)
