@@ -1,13 +1,11 @@
 # weather-dashboard
-[![npm](https://badge.fury.io/js/inquirer.svg)](http://badge.fury.io/js/inquirer)
-
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-Team profile generator using inquirer, that takes input in the form of team member information from a user, Manager, Engineer, and generate an HTML file displaying all three team members.
+ Weather dashboard where user is able to check the temperature and forecast for five days in advance using fetch from the api. previous searches are saved in local storage.
+
 <br>
-Test were written using jest.
-<br>
-![Alt text](image-link "Team-Profile-Generator");
+![Alt text](image-link "weather-dashboard");
 
 ## Table of Contents
 - [Description](#description)
@@ -19,14 +17,12 @@ Test were written using jest.
 
 ## Installation
 1. Clone down repository
-2. install npm (npm i)
-3. install inquirer (npm install inquirer)
+2. open index.html in browser
+
 
 ## Usage
 1. Clone down repository
-2. install npm (npm i)
-3. install inquirer (npm install inquirer)
-4. run app with command (node app.js)
+2. open index.html in browser
 
 
 ## Contributors
