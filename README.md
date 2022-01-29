@@ -5,7 +5,7 @@
  Weather dashboard where user is able to check the temperature and forecast for five days in advance using fetch from the api. previous searches are saved in local storage.
 
 <br>
-![Alt text](image-link "weather-dashboard");
+![Alt text](https://github.com/rpierr33/weather-dashboard/blob/main/img/Screen%20Shot%202022-01-29%20at%206.25.56%20PM.png "weather-dashboard");
 
 ## Table of Contents
 - [Description](#description)
